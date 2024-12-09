@@ -4,7 +4,7 @@
 Findsoed adalah platform inovatif yang memungkinkan kamu untuk melaporkan barang hilang atau barang temuan dengan mudah. Platform ini menjadi solusi terbaik untuk menemukan barang - barang yang hilang di lingkungan UNSOED.
 
 ### ERD
-![gambar preview project](assets/images/erd.png "ERD FINDSOED")
+![gambar preview project](assets/images/erd.jpg "ERD FINDSOED")
 
 # Fitur
 - Autentikasi (Register, Login, Logout)
