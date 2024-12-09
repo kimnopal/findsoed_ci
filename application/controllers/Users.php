@@ -1,7 +1,6 @@
 <?php
 class Users extends CI_Controller
 {
-	// Register user
 	public function register()
 	{
 		$data['title'] = 'Daftar';
@@ -17,19 +16,16 @@ class Users extends CI_Controller
 			$this->load->view('users/register', $data);
 			$this->load->view('templates/footer');
 		} else {
-			// Encrypt password
 			$enc_password = md5($this->input->post('password'));
 
 			$this->user_model->register($enc_password);
 
-			// Set message
 			$this->session->set_flashdata('success_register_user', 'Register berhasil! Silahkan Login');
 
 			redirect('users/login');
 		}
 	}
 
-	// Log in user
 	public function login()
 	{
 		$data['title'] = 'Masuk';
@@ -43,16 +39,13 @@ class Users extends CI_Controller
 			$this->load->view('templates/footer');
 		} else {
 
-			// Get username
 			$username = $this->input->post('username');
-			// Get and encrypt the password
+
 			$password = md5($this->input->post('password'));
 
-			// Login user
 			$user_id = $this->user_model->login($username, $password);
 
 			if ($user_id) {
-				// Create session
 				$user_data = array(
 					'user_id' => $user_id,
 					'username' => $username,
@@ -61,12 +54,10 @@ class Users extends CI_Controller
 
 				$this->session->set_userdata($user_data);
 
-				// Set message
 				$this->session->set_flashdata('success_user_login', 'Berhasil login');
 
 				redirect('pages/view');
 			} else {
-				// Set message
 				$this->session->set_flashdata('error_user_login', 'Gagal Login');
 
 				redirect('users/login');
@@ -74,21 +65,17 @@ class Users extends CI_Controller
 		}
 	}
 
-	// Log user out
 	public function logout()
 	{
-		// Unset user data
 		$this->session->unset_userdata('logged_in');
 		$this->session->unset_userdata('user_id');
 		$this->session->unset_userdata('username');
 
-		// Set message
 		$this->session->set_flashdata('success_user_logout', 'Berhasil logout');
 
 		redirect('users/login');
 	}
 
-	// Check if username exists
 	public function check_username_exists($username)
 	{
 		$this->form_validation->set_message('check_username_exists', 'That username is taken. Please choose a different one');
@@ -99,7 +86,6 @@ class Users extends CI_Controller
 		}
 	}
 
-	// Check if email exists
 	public function check_email_exists($email)
 	{
 		$this->form_validation->set_message('check_email_exists', 'That email is taken. Please choose a different one');

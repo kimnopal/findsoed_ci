@@ -35,48 +35,6 @@ CREATE TABLE `posts` (
     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
-INSERT INTO
-    `posts` (
-        `id`,
-        `category_id`,
-        `user_id`,
-        `title`,
-        `slug`,
-        `description`,
-        `photo`,
-        `created_at`
-    )
-VALUES (
-        1,
-        1,
-        1,
-        'Kehilangan Laptop Acer Nitro V',
-        'kehilangan-acer-nitro-v',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et molestie eros. Maecenas dignissim, erat at faucibus finibus, nunc nibh finibus lacus, sed gravida leo urna at erat. Proin et efficitur dolor, eget interdum enim. Cras nec ante quis tellus gravida ornare. Duis arcu lacus, elementum quis iaculis id, mattis ut turpis. Pellentesque id dignissim dolor. Curabitur finibus facilisis pulvinar. Nullam urna arcu, malesuada a purus a, pharetra pulvinar lacus. Curabitur quis ornare felis, ut ultrices nulla.Fusce placerat aliquam erat, et sagittis diam accumsan vitae. In elementum vel augue sit amet bibendum. Nulla cursus elit metus. Ut auctor nisl quis bibendum tincidunt. Integer gravida nisi id urna rhoncus, nec tristique magna efficitur. Mauris non blandit ipsum, ut tempus purus. Praesent rhoncus gravida aliquam. Nulla finibus mi id fermentum fringilla. Morbi volutpat, massa eget sodales tempus, est risus elementum leo, pulvinar fermentum diam nibh a mi. Phasellus porttitor vitae mauris non elementum. Sed ut lacinia sapien. Proin a metus ullamcorper lectus ultricies euismod. Donec vitae turpis eros. Morbi at imperdiet ligula. Mauris sed rutrum lectus. Phasellus eget nulla congue, dictum dolor ac, dapibus justo.',
-        'kocak.png',
-        '2024-12-05 00:00:00'
-    ),
-    (
-        2,
-        2,
-        1,
-        'Kehilangan Motor Mainan',
-        'kehilangan-motor-mainan',
-        'Cras nec ante quis tellus gravida ornare. Duis arcu lacus, elementum quis iaculis id, mattis ut turpis. Pellentesque id dignissim dolor. Curabitur finibus facilisis pulvinar. Nullam urna arcu, malesuada a purus a, pharetra pulvinar lacus. Curabitur quis ornare felis, ut ultrices nulla.Fusce placerat aliquam erat, et sagittis diam accumsan vitae. In elementum vel augue sit amet bibendum. Nulla cursus elit metus. Ut auctor nisl quis bibendum tincidunt. Intes elementum leo, pulvinar fermentum diam nibh a mi. Phasellus porttitor vitae mauris non elementum. Sed ut lacinia sapien. Proin a metus ullamcorper lectus ultricies euismod. Donec vitae turpis eros. Morbi at imperdiet ligula. Mauris sed rutrum lectus. Phasellus eget nulla congue, dictum dolor ac, dapibus justo.',
-        'kocak.png',
-        '2024-12-05 00:00:00'
-    ),
-    (
-        3,
-        2,
-        2,
-        'Kehilangan semangat skripsian',
-        'kehilangan-semangat-skripsian',
-        'Test aja ye kan',
-        'lah.jpg',
-        '2024-12-05 00:00:00'
-    );
-
 CREATE TABLE `users` (
     `id` int(11) NOT NULL,
     `name` varchar(255) NOT NULL,

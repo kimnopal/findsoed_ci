@@ -33,6 +33,3 @@
         </div>
     <?php endforeach; ?>
 </div>
-<div class="pagination-links">
-    <?php echo $this->pagination->create_links(); ?>
-</div>
